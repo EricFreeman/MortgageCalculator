@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+	<!--<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
+	<script src="jquery-2.0.3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="reset.css" />
+	<link rel="stylesheet" type="text/css" href="main.css" />
+	<link rel="stylesheet" type="text/css" href="calculator.css" />
+	<script src="calculator.js"></script>
+</head>
+<body>
+	<div id="header">
+		<span id="headerTitle">
+			<img src="icon.png" class="icon" />
+			<span>
+				<a href="index.html" id="headerTitleLink">
+					Mortgage Calculator
+				</a>
+			</span>
+		</span>
+		<span id="headerLinks">
+			<a href="index.html">Home</a>
+		</span>
+	</div>
+
+	<div id="calculatorSection">
+		<div class="center">
+			<div class="sectionTitle">Early Payoff Calculator</div>
+			<div class="sectionContent">			
+				Loan amount: 
+				<input type="text" class="money" id="loanAmount" value="$282,500.00" />
+				<br />
+				
+				Interest rate:
+				<input type="text" id="interestRate" value="3.375" />%
+				<br />
+				
+				Monthly payment:
+				<input type="text" class="money" id="monthlyPayment" value="$850.00" />
+				<br />
+				
+				Extra per payment:
+				<input type="text" class="money" id="extraMonthly" value="$50.00" />
+				<br />
+				
+				Switch to bi-monthly payments:
+				<input type="checkbox" id="isBiMonthly" />
+				<br />
+				
+				Start date:
+				<!-- TODO: make this all come from jquery datepicker -->
+				<select id="startDateMonth">
+					<option value="1">1 - January</option>
+					<option value="2">2 - Febuary</option>
+					<option value="3">3 - March</option>
+					<option value="4">4 - April</option>
+					<option value="5">5 - May</option>
+					<option value="6">6 - June</option>
+					<option value="7">7 - July</option>
+					<option value="8">8 - August</option>
+					<option value="9">9 - September</option>
+					<option value="10">10 - October</option>
+					<option value="11">11 - November</option>
+					<option value="12">12 - December</option>
+				</select>
+				<select id="startDateYear" class="year"></select>
+				<br />
+				
+				One off payments: <input type="button" value="+" id="addMoreOneOff" />
+				
+				<div id="oneOffContainer"></div>
+				
+				<button id="recalculate">Recalculate</button>
+			</div>
+		</div>
+		
+		<div id="here_table" class="center" />
+	</div>
+</body>

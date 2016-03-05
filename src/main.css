@@ -1,0 +1,143 @@
+body {
+	font-family: "Segoe UI Light";
+	background-color: #C0FFEE;
+}
+
+#header {
+	background-color: #000000;
+	color: #FFFFFF;
+	height: 80px;
+	font-size: 24px;
+	line-height: 80px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+#headerTitle {
+	padding-left: 100px;
+}
+
+#headerTitleLink {
+	margin-left: 0px !important;
+	text-decoration: none !important;
+}
+
+#header a {
+	margin-left: 50px;
+}
+
+#header a:link {
+	color: white;
+	text-decoration: none;
+}
+
+#header a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+#header a:hover {
+	text-decoration: underline;
+}
+
+.icon {
+	vertical-align: middle;
+	margin-top: -5px;
+}
+
+#headerLinks {
+	font-size: 16px;
+	margin-left: 50px;
+	float: right;
+	padding-right: 100px;
+	display: none;
+}
+
+@media screen and (min-width:950px) {
+	#headerLinks {
+		display: block;
+	}
+}
+
+#whatSection {
+	padding: 280px 0 200px 0;
+}
+
+#whoSection {
+	background-color: #FFFFFF;
+	padding: 200px 0 200px 0;
+}
+
+#whySection {
+	background-color: #DCFFF5;
+	padding: 200px 0 200px 0;
+}
+
+#howSection {
+	background-color: #9CBFB5;
+	padding: 200px 0 200px 0;
+}
+
+#meSection {
+	padding: 200px 0 200px 0;
+}
+
+#copyrightSection {
+	padding: 25px 0 25px 0;
+	font-size: 12px;
+}
+
+.sectionTitle {
+	font-size: 36px;
+}
+
+.sectionContent {
+	margin-top: 16px;
+	line-height: 24px;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.color1 {
+	background-color: #FFE7C0;
+}
+
+.color2 {
+	background-color: #C5DFFF;
+}
+
+.color3 {
+	background-color: #FFD7C0;
+}
+
+.adSection {
+	padding: 100px 0 100px 0;
+	text-align: center;
+}
+
+.adSection iframe {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+a {
+	color: black;
+}
