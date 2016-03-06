@@ -1,6 +1,6 @@
 $(function() {
-	var loanAmount, interestRate, monthlyPayment, 
-		extraMonthly, startDate, isBiMonthly, oneOffCount = 0;
+	var loanAmount, loanLength, interestRate, monthlyPayment, 
+		extraMonthly, startDate, isBiMonthly, periodInterestRate, oneOffCount = 0;
 		
 	populateStartYear();
 	applyMoneyBind();
@@ -18,12 +18,17 @@ $(function() {
 	//get new value of fields
 	$('#recalculate').click(function() {
 		loanAmount = fromMoney($('#loanAmount').val());
+		loanLength = $('#loanLength').val();
 		interestRate = $('#interestRate').val();
 		monthlyPayment = fromMoney($('#monthlyPayment').val());
 		extraMonthly = fromMoney($('#extraMonthly').val());
 		isBiMonthly = $('#isBiMonthly').prop('checked');
+
+		periodInterestRate = interestRate / 12 / 100;
+		var payment = round(loanAmount * (periodInterestRate * Math.pow(1 + periodInterestRate, loanLength)) / (Math.pow(1 + periodInterestRate, loanLength) - 1));
+		monthlyPayment = payment;
 		if(isBiMonthly) monthlyPayment /= 2;
-		
+
 		var startMonth = $('#startDateMonth').val();
 		var startYear = $('#startDateYear').val();
 		startDate = new Date(startMonth + '/1/' + startYear);
