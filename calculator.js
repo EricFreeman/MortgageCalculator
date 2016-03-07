@@ -25,8 +25,9 @@ $(function() {
 		isBiMonthly = $('#isBiMonthly').prop('checked');
 
 		periodInterestRate = interestRate / 12 / 100;
-		var payment = round(loanAmount * (periodInterestRate * Math.pow(1 + periodInterestRate, loanLength)) / (Math.pow(1 + periodInterestRate, loanLength) - 1));
-		monthlyPayment = payment;
+		monthlyPayment = round(loanAmount * (periodInterestRate * Math.pow(1 + periodInterestRate, loanLength)) / (Math.pow(1 + periodInterestRate, loanLength) - 1));
+		$('#monthlyPayment').val(toMoney(monthlyPayment));
+
 		if(isBiMonthly) monthlyPayment /= 2;
 
 		var startMonth = $('#startDateMonth').val();
