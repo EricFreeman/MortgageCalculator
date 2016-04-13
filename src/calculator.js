@@ -34,6 +34,18 @@ $(function() {
 		$('#monthlyPayment').val(toMoney(fromMoney($('#monthlyPayment').val())));
 		$('#extraMonthly').val(toMoney(fromMoney($('#extraMonthly').val())));
 	});
+
+	var localStorageKeys = ["loanAmount", "interestRate", "monthlyPayment", "extraMonthly", "isBiMonthly"]
+	$.each(localStorageKeys, function (key, value) {
+	    if (localStorage[value]) {
+	        $("#" + value).val(localStorage[value]);
+	    }
+	    $("#" + value).change(function () {
+	        if (localStorage[value]) {
+	            localStorage[value] = $("#" + value).val();
+	        }
+	    });
+	});
 	
 	//rounds to two decimal points and the .000001 fixes 1.005 not rounding to 1.01
 	function round(inp) {
